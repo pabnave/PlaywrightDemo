@@ -5,6 +5,8 @@ test.describe('Test group', () => {
     await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
     await expect(page.getByRole('textbox', { name: 'Username:' })).toBeVisible();
         await expect(page.getByRole('textbox', { name: 'Username:' })).toBeVisible();
+                await expect(page.getByRole('textbox', { name: 'Username:' })).toBeVisible();
+
 
   });
 });
