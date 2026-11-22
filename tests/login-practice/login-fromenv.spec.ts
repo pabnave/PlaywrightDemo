@@ -12,6 +12,6 @@ test("Login test from env file", async({page})=>{
   await page.locator('#terms').check();
   await page.locator('#login').click();
 
-  await expect(page).toHaveURL(/loginpagePractise/);
+  await expect(page).toHaveURL(/angularpractice/);
 
 });
