@@ -1,4 +1,11 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
+const environment = process.env.ENV || 'qa';
+
+dotenv.config({
+  path: `.env.${environment.toLowerCase()}`
+});
+
 
 /**
  * Read environment variables from file.
@@ -11,6 +18,9 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+
+
+
 export default defineConfig({
   testDir: './tests',
  
@@ -23,6 +33,8 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    baseURL: process.env.BASE_URL,
+    screenshot: 'only-on-failure',
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
     headless: true,
